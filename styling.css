@@ -1,0 +1,122 @@
+body {
+    background-color: #222222;
+    color: white;
+}
+
+.other-content {
+    padding: 20px;
+}
+
+a {
+    color: #5FAFF9;
+}
+
+a:hover {
+    color: #FFDF00;
+    font-size: 110%;
+    text-decoration: none;
+}
+
+h1 {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.navbar {
+    width:100%;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    top: 0px;
+    background: black;
+    color: white;
+    padding: 5px 20px;
+    display: flex
+}
+
+.sort-btn {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sort-btn:hover {
+    text-decoration: underline;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-top: 17px;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links li a {
+    font-weight: bold;
+    color: #bbbbbb;
+    font-size: 24px;
+}
+
+.nav-links li a:hover {
+    color: #FFDF00;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: lightgray;
+}
+
+button.btn.btn-primary {
+    background-color: #222222;
+}
+
+button.btn.btn-link {
+    background-color: #222222;
+    border-color: #007bff;
+    border-radius: 5px;
+}
+
+button.btn.btn-primary:disabled {
+    background-color: #111111;
+}
+
+button.btn.btn-primary:hover:enabled {
+    background-color: #444444;
+}
+
+.table td, .table th {
+    color: #000000;
+}
+
+button.btn.btn-success.btn-full-size {
+    width:100%;
+    background-color: #222222;
+}
+
+button.btn.btn-success.btn-full-size:hover {
+    background-color: #444444;
+}
+
+button.btn.btn-sm {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+button.btn.btn-sm:hover:enabled {
+    background-color: #444444;
+}
+
+td {
+    color: #ffffff;
+}
+
+li.list-group-item {
+    background-color: #222222;
+}
