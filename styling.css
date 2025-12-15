@@ -1,10 +1,13 @@
 body {
-    background-color: #aaacd9;
+    background-color: #FAF3E0;
     color: #0d162b;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
 }
 
 .other-content {
     padding: 20px;
+    margin-top: 80px;
 }
 
 /* a {
@@ -19,23 +22,56 @@ a:hover {
 
 h1 {
     padding-bottom: 10px;
-    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.column-view {
+    display: flex;
+    gap: 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 75px;
+}
+
+.column-one {
+    flex: 1;
+    padding: 10px;
+    border-right: 2px solid #202957; 
+}
+
+.toc {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    float: left;
+}
+
+.column-two {
+    flex: 3;
+    padding: 10px;
+}
+
+#section1 {
+    scroll-margin-top: 80px;
 }
 
 .navbar {
     width:100%;
+    position: fixed;
     align-items: center;
     justify-content: space-between;
     top: 0px;
     background: #202957;
     color: #9084bf;
     padding: 5px 20px;
-    display: flex
+    display: flex;
+    height: 80px;
 }
 
 .nav-links {
     list-style: none;
-    margin-top: 17px;
+    margin-top: 12px;
 }
 
 .nav-links li {
@@ -47,7 +83,8 @@ h1 {
     transition: transform 0.2s ease, color 0.2s ease;
     font-weight: bold;
     color: #aaacd9;
-    font-size: 24px;
+    font-size: 30px;
+    font-family: 'Urbanist', sans-serif;
 }
 
 .nav-links li a:hover {
