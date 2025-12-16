@@ -1,3 +1,5 @@
+<!-- GRAPHIC DESIGN IS MY PASSION -->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,63 +12,69 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Imported Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap">
 
+    <!-- My CSS stylesheet -->
     <link rel="stylesheet" href="styling.css">
 
-    <title>kuanga5.github.io</title>
+    <title>Aaron Kuang</title>
 </head>
 <body>
 
 <nav class="navbar">
     <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li>Home</li>
+        <!-- <li><a href="publications.html">Publications</a></li> -->
     </ul>
+    <span class="name">Aaron Kuang</span>
 </nav>
 
 <div class="other-content">
     <div class="column-view">
         <div class="column-one">
-            <h1>Hi There 1</h1>
+            <!-- Image + Caption -->
+            <img class="headshot" src="belladonna.jpg" alt="Placeholder image until I have something better to put here">
+            <p>Email: kuanga5 [at] uci [dot] edu<br/><a href="CV_No_Phone.pdf">Curriculum Vitae</a></p>
+            <br/>
+            <!-- Table of Contents (Do people use this?) -->
             <div class="toc">
-                <h2>Table of Contents</h2>
                 <ul>
                     <li><a href="#section1">Biography</a></li>
+                    <li><a href="#section2">Research Interests</a></li>
+                    <li><a href="#section3">Education</a></li>
                 </ul>
             </div>
         </div>
         <div class="column-two">
-            <h1 id="section1">Biography</h1>
-            <p>For 21 years, I have existed on this Earth, and in my (very short) lifespan, I have learned that humanity is kind of awesome. As a certified coderman, I believe that our species of codermen can live in harmony with mankind. One thing we codermen are capable of doing is reversing gravity at will. The humans just don't notice this because their brains are too small to comprehend the fifth-dimension tactics we employ in warfare.</p>
+            <!-- Biography -->
+            <h1 id="section1">Short Biography</h1>
+            <p>I am a 4th-year undergraduate Computer Science major at <a href="https://ics.uci.edu/">UC Irvine</a>, currently set to graduate in Winter 2026. My initial decision to major in Computer Science was primarily out of an interest to program robots (long story), but navigating the university landscape has slowly pulled me toward research. Right now, I am applying to Ph.D. programs that combine focus on Computer Science Education and Computer Science Theory. Outside of Computer Science, I enjoy astronomy pictures and writing about random topics.</p>
             <br/>
             <br/>
             <br/>
             <br/>
+            <!-- Research Interests -->
+            <h1 id="section2">Research Interest Summary</h1>
+            <h2>Computer Science Theory Education</h2>
+            <p>I am interested in investigating how students learn in computer science theory courses, with an emphasis on understanding the factors that contribute to their success and struggles. As of right now, my focus is on algorithm design, but I plan to extend this to automata theory and quantum computation. With many students finding algorithm design difficult, I want to discover how we can revise our teaching methods and help resources to ensure that students feel confident in their abilities to design algorithms. <b>Where</b> are they making mistakes? <b>What</b> mistakes do they make? <b>Why</b> are they making mistakes? How well do our class resources make progress towards eliminating these mistakes? Answering these questions is crucial if we want to improve how we teach algorithm design.</p>
+            <br/>
+            <h2>Hybrid Quantum-Classical Algorithm Design</h2>
+            <p>While quantum computing has seen very promising results recently, our current devices are expensive and prone to noise. Running pure quantum algorithms on the noisy intermediate-scale quantum (NISQ) devices we have right now carries a high risk of outputting unusable results due to decoherence. With pure quantum algorithms being limited by noise, we instead approach algorithm design by finding ways to leverage quantum computing to enhance classical algorithms. Quantum frameworks are known for their speedups &mdash; what if we used them to mitigate the computational bottlenecks commonly associated with inefficient classical algorithms? How do we analyze the computational complexity of these hybrid algorithms?</p>
             <br/>
             <br/>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            <!-- Education -->
+            <h1 id="section3">Education</h1>
+            <h3>University of California, Irvine</h3>
+            <p>B.S. in Computer Science | Sep 2022 &ndash; Mar 2026 (Expected)<br/><span style="font-style: italic">Campuswide Honors Collegium, ICS Honors Program</span></p>
         </div>
     </div>
 </div>
+
+<div class="footer"><span class="footer-content">© 2025 Aaron Kuang. Original content on this page is licensed under &nbsp;<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</span></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

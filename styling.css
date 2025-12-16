@@ -1,28 +1,79 @@
+:root {
+    --body-font: 'Quicksand', sans-serif;
+    --header-font: 'Urbanist', sans-serif;
+    --body-text-color: #0d162b;
+    --bg-color: #FAF3E0;
+    --navbar-height: 80px;
+    --footer-height: 40px;
+    --hf-bg-color: #202957;
+    --hf-text-color: #9084bf;
+    --h1-color: #45457f;
+    --h2-color: #574f88;
+    --link-color: #5481be;
+    --link-visited-color: #303469;
+    --link-hover-color: #626493;
+    --hf-link-color: #aaacd9;
+    --hf-link-hover-color: #626493;
+    --hf-transform: scale(1.1);
+}
+
 body {
-    background-color: #FAF3E0;
-    color: #0d162b;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
+    background-color: var(--bg-color);
+    color: var(--body-text-color);
+    font-family: var(--body-font);
+    font-size: 19px;
 }
 
 .other-content {
     padding: 20px;
-    margin-top: 80px;
+    margin-top: var(--navbar-height);
+    margin-bottom: var(--footer-height);
 }
 
-/* a {
-    color: #5FAFF9;
+a, a:visited {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-decoration: underline;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:visited {
+    color: var(--link-visited-color);
 }
 
 a:hover {
-    color: #FFDF00;
-    font-size: 110%;
+    color: var(--link-hover-color);
+    transform: scale(1.05);
     text-decoration: none;
-} */
+}
 
 h1 {
-    padding-bottom: 10px;
-    font-family: 'Urbanist', sans-serif;
+    padding-bottom: 3px;
+    font-size: 35px;
+    font-family: var(--header-font);
+    color: var(--h1-color);
+}
+
+h2 {
+    padding-bottom: 2px;
+    font-size: 25px;
+    font-family: var(--header-font);
+    color: var(--h2-color)
+}
+
+h3 {
+    padding-bottom: 1px;
+    font-size: 22px;
+    font-family: var(--header-font);
+}
+
+.headshot {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-right: 25px;
 }
 
 .column-view {
@@ -36,15 +87,35 @@ h1 {
 .column-one {
     flex: 1;
     padding: 10px;
-    border-right: 2px solid #202957; 
+    border-right: 2px solid var(--hf-bg-color); 
 }
 
 .toc {
     position: sticky;
-    top: 90px;
+    top: calc(var(--navbar-height) + 20px);
     max-height: calc(100vh - 60px);
-    overflow-y: auto;
-    float: left;
+    overflow: visible;
+}
+
+.toc a {
+    color: var(--link-visited-color);
+    text-decoration: none;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+}
+
+.toc ul::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--h2-color);
 }
 
 .column-two {
@@ -52,44 +123,63 @@ h1 {
     padding: 10px;
 }
 
-#section1 {
-    scroll-margin-top: 80px;
+#section1, #section2, #section3 {
+    scroll-margin-top: calc(var(--navbar-height) * 1.25);
 }
 
-.navbar {
-    width:100%;
+.navbar, .footer {
+    width: 100%;
     position: fixed;
     align-items: center;
     justify-content: space-between;
-    top: 0px;
-    background: #202957;
-    color: #9084bf;
+    background: var(--hf-bg-color);
+    color: var(--hf-text-color);
     padding: 5px 20px;
     display: flex;
-    height: 80px;
+}
+
+.navbar {
+    top: 0px;
+    height: var(--navbar-height);
+}
+
+.footer {
+    bottom: 0px;
+    height: var(--footer-height);
+}
+
+.nav-links, .footer-content, .name {
+    font-family: var(--header-font);
+    display: flex;
+}
+
+.nav-links, .name {
+    list-style: none;
+    font-size: 30px;
+    font-weight: bold;
+    gap: 20px;
 }
 
 .nav-links {
-    list-style: none;
     margin-top: 12px;
+}
+
+.name {
+    margin-right: 20px;
 }
 
 .nav-links li {
     margin-right: 20px;
 }
 
-.nav-links li a {
-    display: inline-block; /* ensures transform works nicely */
-    transition: transform 0.2s ease, color 0.2s ease;
-    font-weight: bold;
-    color: #aaacd9;
-    font-size: 30px;
-    font-family: 'Urbanist', sans-serif;
+.nav-links li a, .footer a {
+    color: var(--hf-link-color);
+    text-decoration: none;
 }
 
-.nav-links li a:hover {
-    color: #626493;
-    transform: scale(1.1); /* scales text smoothly without affecting layout */
+.nav-links li a:hover, .footer a:hover {
+    color: var(--hf-link-hover-color);
+    transform: var(--hf-transform);
     text-decoration: none;
 }
 
@@ -97,54 +187,7 @@ h1 {
     margin-right: 0;
 }
 
-.btn {
-    background-color: lightgray;
-}
-
-button.btn.btn-primary {
-    background-color: #222222;
-}
-
-button.btn.btn-link {
-    background-color: #222222;
-    border-color: #007bff;
-    border-radius: 5px;
-}
-
-button.btn.btn-primary:disabled {
-    background-color: #111111;
-}
-
-button.btn.btn-primary:hover:enabled {
-    background-color: #444444;
-}
-
-.table td, .table th {
-    color: #000000;
-}
-
-button.btn.btn-success.btn-full-size {
-    width:100%;
-    background-color: #222222;
-}
-
-button.btn.btn-success.btn-full-size:hover {
-    background-color: #444444;
-}
-
-button.btn.btn-sm {
-    background-color: #222222;
-    color: #ffffff;
-}
-
-button.btn.btn-sm:hover:enabled {
-    background-color: #444444;
-}
-
-td {
-    color: #ffffff;
-}
-
-li.list-group-item {
-    background-color: #222222;
+.footer-content {
+    margin-top: 3px;
+    font-size: 22px;
 }
