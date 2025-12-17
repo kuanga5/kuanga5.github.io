@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Imported Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap">
+
+    <!-- My CSS stylesheet -->
+    <link rel="stylesheet" href="../styling.css">
+
+    <title>Thoughts</title>
+</head>
+<body>
+
+<nav class="navbar bar">
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <!-- <li><a href="publications.html">Publications</a></li> -->
+        <li><a href="../thoughts.html">Thoughts</a></li>
+    </ul>
+    <span class="name">Aaron Kuang</span>
+</nav>
+
+<div class="other-content">
+    <div class="thoughts">
+        <h1 style="text-align: center;">The Longest Android Lock Screen Pattern</h1>
+        <p class="date" style="text-align: center;">December 16, 2025</p>
+        <p>You may have come across a "password" like this if you've ever seen someone's Android lock screen:</p>
+        <img src="../files/android_lock.jpg" style="width:20%; display:block; margin: auto; padding: 5px;">
+        <p>This pattern already seems like a nightmare to memorize, but what if you wanted to maximize the amount of time it took for some malicious hacker to break into your phone, given that they knew the correct permutation of points? Suppose we labeled each of the points in row-major order from 1 to 9. This specific pattern would be 167294385. Suppose we added the concept of distance &mdash; that is, the distance your finger has to travel to trace the pattern. The distance (or "weight") on the edges (1,2), (1,4), (2,3), etc. is defined to be 1 unit.</p>
+        <p>What is the longest path we can make? There is one major restriction that makes this problem interesting: if an edge we want to take passes through an unvisited point, this counts as visiting that point. For example, if I attempted to use the edge (1,3) without having visited point 2, since point 2 lies directly in the path, this will effectively break up my path into two edges: (1,2) and (2,3). However, if I had previously used point 2, then I can use the edge (1,3), effectively increasing the distance my path covers. On a 3x3 board, one can brute force this by iterating through all the possible patterns and finding the maximum path length of them all. As it turns out, on a 3x3 board, the maximum is approximately 17.779 units, achieved by the pattern 591643728 (and several others). Notice that this takes advantage of Android's restriction: because 5 was visited before we took the edge (9,1), we managed to increase the overall length of the path crossing through those 3 points compared to the simple (1,5) and (5,9) approach.</p>
+        <p>So let's formulate the generalized problem: Given a nxn grid of points, what is the length of the longest path that can be made, subject to the rules of the Android lock screen patterns? We can then extend this to a decision problem: Given some constant D, does there exist a path that covers a distance of at least D?</p>
+        <p>What has been defined here is effectively a special case of the longest path problem, whose decision variant is known to be NP-complete. We can see that this problem is in NP: given a certificate consisting of a path, verify whether the path is valid and that the distance covered by it is at least D &mdash; return TRUE if and only if both conditions hold. But is it NP-hard? Proving this would require that we reduce a known NP-hard problem to it.</p>
+        <p>As for any practical benefits that would arise from proving that this problem is NP-complete, I cannot really think of any, but I'm still relatively new to the field of computational complexity... and I own an Apple device, so take my words with a grain of salt. In the meantime, I'd still like anyone who's even remotely interested in this topic to consider the problem formulated here and give it some thought, no matter how brief. </p>
+    </div>
+</div>
+
+<div class="footer bar"><span class="footer-content">© 2025 Aaron Kuang. Original content on this page is licensed under &nbsp;<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</span></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

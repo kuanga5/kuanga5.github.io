@@ -193,3 +193,25 @@ h3 {
     margin-top: 3px;
     font-size: 22px;
 }
+
+/* THOUGHTS */
+.thoughts {
+    padding: 50px 250px;
+
+    .post {
+        padding: 25px 0px;
+    }
+
+    .date {
+        margin: 5px 0px;
+        color: var(--h2-color);
+    }
+
+    hr {
+        background-color: var(--hf-bg-color);
+    }
+
+    h1 a {
+        color: var(--h1-color);
+    }
+}
