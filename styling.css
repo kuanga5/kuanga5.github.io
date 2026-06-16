@@ -95,12 +95,59 @@ h3 {
     padding: 10px;
 }
 
+/* MOBILE COLUMNS */
+@media (max-width: 768px) {
+    .column-view {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .column-one {
+        border-right: none;
+        border-bottom: 2px solid var(--hf-bg-color);
+        margin-bottom: 20px;
+    }
+}
+
 /* TABLE OF CONTENTS */
 .toc {
     position: sticky;
     top: calc(var(--navbar-height) + 20px);
     max-height: calc(100vh - 60px);
     overflow: visible;
+
+    a {
+        color: var(--link-visited-color);
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--h2-color);
+        }
+    }
+}
+
+/* MOBILE TABLE OF CONTENTS */
+@media (max-width: 768px) {
+    .toc {
+        position: static !important;
+        top: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        z-index: 0 !important;
+    }
 
     a {
         color: var(--link-visited-color);
@@ -143,11 +190,13 @@ h3 {
 .navbar {
     top: 0px;
     height: var(--navbar-height);
+    z-index: 1000;
 }
 
 .footer {
     bottom: 0px;
     height: var(--footer-height);
+    z-index: 1000;
 }
 
 .nav-links, .footer-content, .name {
@@ -192,6 +241,36 @@ h3 {
 .footer-content {
     margin-top: 3px;
     font-size: 22px;
+}
+
+.desktop-footer-content { display: inline; }
+.mobile-footer-content { display: none; }
+
+@media (max-width: 768px) {
+    .desktop-footer-content { display: none; }
+    .mobile-footer-content { display: inline; }
+    
+    :root {
+        --navbar-height: 60px;
+    }
+
+    .nav-links, .name {
+        font-size: 20px;
+        gap: 0;
+    }
+
+    .name {
+        margin-right: 5px;
+    }
+
+    .footer-content {
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .footer {
+        padding: 3px 12px;
+    }
 }
 
 /* THOUGHTS */
