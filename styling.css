@@ -30,6 +30,15 @@ body {
     margin-bottom: var(--footer-height);
 }
 
+.pub-list {
+    list-style-type: none;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--hf-bg-color); /* your color */
+}
+
 a {
     color: var(--link-color);
     display: inline-block;
@@ -69,7 +78,7 @@ h3 {
     font-size: 22px;
 }
 
-.headshot {
+.headshot { 
     width: 100%;
     margin-bottom: 10px;
     padding-right: 25px;
